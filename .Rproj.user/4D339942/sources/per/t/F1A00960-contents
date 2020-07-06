@@ -1,0 +1,55 @@
+---
+title: "Reporte"
+output:
+  html_document: 
+    toc: true
+    toc_depth: 5
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
+---
+
+```{r, librerias,include=FALSE, echo=FALSE}
+library(pacman)
+library(ggplot2)
+library(plotly)
+library(gganimate)
+library(gifski)
+library(mapview)
+library(sf)
+library(rgdal)
+library(maptools)
+library(gridExtra)
+library(data.table)
+library(DT)
+library(leaflet)
+
+```
+
+
+
+#**Introducción**
+
+#**Resultados**
+
+###**Mapa de Red**
+
+```{r, include=FALSE, leerCapas, echo=FALSE}
+img <- 
+flirs <- st_read("Mapas/flirs.shp")
+rgbs <- st_read("Mapas/rgbs.shp")
+
+```
+
+```{r mapa1, echo=FALSE}
+img<- rgbs$RelPath
+mapview::mapview(list(flirs,rgbs),labels=F, map.types = "Esri.WorldImagery")
+```
+
+
+###**Informe de Torres**
+
+```{r, datosEstados, echo=FALSE}
+
+datatable(rgbs)
+```

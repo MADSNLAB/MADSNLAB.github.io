@@ -1,0 +1,7 @@
+"0","img<- rgbs$RelPath"
+"0","mapview::mapview(list(flirs,rgbs),labels=F, map.types = ""Esri.WorldImagery"", popup=popupImage(img =rgbs$Path))"
+"2","'mapview::popupImage' is deprecated.
+Use 'leafpop::popupImage' instead.
+See help(""Deprecated"") and help(""mapview-deprecated"")."
+"2","Error in FUN(X[[i]], ...) : invalid 'file' argument
+"
