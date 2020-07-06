@@ -2,8 +2,8 @@
 title: "Reporte"
 output:
   prettydoc::html_pretty:
-    theme: architect
-    highlight: github
+    theme: cayman
+    highlight: vignette
     toc: true
     toc_depth: 5
     includes:
@@ -29,36 +29,75 @@ library(leaflet)
 
 
 
-#**Introducción**
+##**Introducción**
 
-#**Resultados**
+Este es un reporte de inspección de la red de distribución de energía eléctrica de CFE en el Sur de Sonora realizado por Vehículo aéreo no tripulado equipado con Cámara RGB y Cámara térmica FLIR.
 
-###**Mapa de Red**
+##**Actividades**
+
+###**Red inspeccionada**
 
 ```{r, include=FALSE, leerCapas, echo=FALSE}
  
 flirs <- st_read("Mapas/flirs.shp")
 rgbs <- st_read("Mapas/rgbs.shp")
-puntos <-st_read("Mapas/COT04010 Puntos.shp")
-redes <- st_read("Mapas/LST-OVI-73510-COT.shp")
+COT04010_Puntos <-st_read("Mapas/COT04010 Puntos.shp")
+COT04010 <-st_read("Mapas/COT04010.shp")
+LST_OVI_73510_COT_puntos <- st_read("Mapas/LST-OVI-73510-COT-puntos(1).shp")
+LST_OVI_73510_COT <- st_read("Mapas/LST-OVI-73510-COT.shp")
+
 
 ```
 
 
 ```{r mapa1, echo=FALSE}
-img<- rgbs$RelPath
-mapview::mapview(list(puntos, redes),labels=F, map.types = "Esri.WorldImagery")
+
+mapview::mapview(list(COT04010_Puntos,COT04010,LST_OVI_73510_COT_puntos,LST_OVI_73510_COT),labels=F, map.types = "Esri.WorldImagery", col.regions=list("red","blue","darkseagreen1","gray48"))
 ```
+
+###**Imágenes tomadas con Drone**
+
+Aquí se muestran las ubicaciones geográficas extraídas de los metadatos de las imágenes de donde fueron capturadas con ambas cámaras
 
 ```{r mapa2, echo=FALSE}
 img<- rgbs$RelPath
-mapview::mapview(list(flirs,rgbs),labels=F, map.types = "Esri.WorldImagery")
+mapview::mapview(rgbs,labels=F, map.types = "Esri.WorldImagery")+mapview::mapview(flirs,labels=F, map.types = "Esri.WorldImagery", col.regions = "red")
 ```
 
 
-###**Informe de Torres**
+###**Tabla de imágenes**
 
 ```{r, datosEstados, echo=FALSE}
 
 datatable(rgbs)
 ```
+
+
+##**Errores Encontrados**
+
+
+###**Repodrte detallado de los casos**
+
+####**Torre **
+![](Images/DJI_0011.JPG)
+
+![](Images/DJI_0011_1.JPG)
+
+####**Torre **
+
+![](Images/DJI_0035.JPG)
+
+![](Images/DJI_0035_1.JPG)
+
+## Análisis en tiempo real simultáneo 
+
+Aquí se tiene el análisis realizado simultáneamente con ambas cámaras RGB y FLIR Térmica 
+
+<iframe width="560" height="315" src="https://youtu.be/SHpPi8OzRqo" frameborder="0" allowfullscreen></iframe>
+
+
+##Video explicativo del proyecto 
+
+<iframe width="560" height="315" src="https://youtu.be/wVHYY008qbE" frameborder="0" allowfullscreen></iframe>
+
+
