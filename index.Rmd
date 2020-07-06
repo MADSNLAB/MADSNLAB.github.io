@@ -35,13 +35,21 @@ library(leaflet)
 ###**Mapa de Red**
 
 ```{r, include=FALSE, leerCapas, echo=FALSE}
-img <- 
+ 
 flirs <- st_read("Mapas/flirs.shp")
 rgbs <- st_read("Mapas/rgbs.shp")
+puntos <-st_read("Mapas/COT04010 Puntos.shp")
+redes <- st_read("Mapas/LST-OVI-73510-COT.shp")
 
 ```
 
+
 ```{r mapa1, echo=FALSE}
+img<- rgbs$RelPath
+mapview::mapview(list(puntos,redes),labels=F, map.types = "Esri.WorldImagery")
+```
+
+```{r mapa2, echo=FALSE}
 img<- rgbs$RelPath
 mapview::mapview(list(flirs,rgbs),labels=F, map.types = "Esri.WorldImagery")
 ```
