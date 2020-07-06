@@ -1,12 +1,13 @@
 ---
 title: "Reporte"
 output:
-  html_document: 
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
     toc: true
     toc_depth: 5
-    toc_float:
-      collapsed: true
-      smooth_scroll: true
+    includes:
+      in_header: logo.html
 ---
 
 ```{r, librerias,include=FALSE, echo=FALSE}
@@ -46,7 +47,7 @@ redes <- st_read("Mapas/LST-OVI-73510-COT.shp")
 
 ```{r mapa1, echo=FALSE}
 img<- rgbs$RelPath
-mapview::mapview(list(puntos,redes),labels=F, map.types = "Esri.WorldImagery")
+mapview::mapview(list(puntos, redes),labels=F, map.types = "Esri.WorldImagery")
 ```
 
 ```{r mapa2, echo=FALSE}
