@@ -24,6 +24,7 @@ library(gridExtra)
 library(data.table)
 library(DT)
 library(leaflet)
+library(xfun)
 
 ```
 
@@ -76,9 +77,10 @@ datatable(rgbs)
 ##**Errores Encontrados**
 
 
-###**Repodrte detallado de los casos**
+###**Reporte detallado de los casos**
 
 ####**Torre **
+
 ![](Images/DJI_0011.JPG)
 
 ![](Images/DJI_0011_1.JPG)
@@ -89,16 +91,24 @@ datatable(rgbs)
 
 ![](Images/DJI_0035_1.JPG)
 
-## Análisis en tiempo real simultáneo 
+## **Análisis en tiempo real simultáneo**
 
 Aquí se tiene el análisis realizado simultáneamente con ambas cámaras RGB y FLIR Térmica 
 
 <iframe width="812" height="541" src="https://www.youtube.com/embed/SHpPi8OzRqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-##Video explicativo del proyecto 
+##**Video explicativo del proyecto **
 
 <iframe width="812" height="541" src="https://www.youtube.com/embed/wVHYY008qbE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+##**Descarga de Reporte**
+
+```{r reporte, echo= FALSE}
+xfun::embed_file("Reporte CFE Torre 042.pdf")
+```
+
 
 
 
