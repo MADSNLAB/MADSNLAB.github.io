@@ -79,34 +79,21 @@ datatable(rgbs)
 
 ###**Reporte detallado de los casos**
 
-####**Torre **
+####**Torre 2730**
 
 **Imagen original**
 
-![](Images/DJI_0011.JPG)
+![](Images/DJI_0055.JPG)
 
 
 **Imagen detectada**
 
-![](Images/DJI_0011_error.jpg)
+![](Images/DJI_0055 (1).jpg)
 
 **Imagen Térmica**
 
-![](Images/DJI_0011_flir.jpg)
+![](Images/2730Termico.JPG)
 
-####**Torre **
-
-**Imagen original**
-
-![](Images/DJI_0035.JPG)
-
-**Imagen detectada**
-
-![](Images/DJI_0035_error.jpg)
-
-**Imagen Térmica**
-
-![](Images/DJI_0035_flir.jpg)
 
 ## **Análisis en tiempo real simultáneo**
 
@@ -123,7 +110,7 @@ Aquí se tiene el análisis realizado simultáneamente con ambas cámaras RGB y 
 ##**Descarga de Reporte**
 
 ```{r reporte, echo= FALSE}
-xfun::embed_file("Reporte CFE Torre 042.pdf")
+xfun::embed_file("Reporte poste 2730.pdf")
 ```
 
 
