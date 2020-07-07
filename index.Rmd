@@ -83,13 +83,13 @@ datatable(rgbs)
 
 ![](Images/DJI_0011.JPG)
 
-![](Images/DJI_0011_1.JPG)
+![](Images/DJI_0011_error.JPG)
 
 ####**Torre **
 
 ![](Images/DJI_0035.JPG)
 
-![](Images/DJI_0035_1.JPG)
+![](Images/DJI_0035_error.JPG)
 
 ## **Análisis en tiempo real simultáneo**
 
