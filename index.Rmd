@@ -87,7 +87,8 @@ xfun::embed_file("Reporte poste 2730.pdf")
 
 
 
-###**Errores Encontrados**
+###**Ejemplo de Anomalías Encontradas**
+Aqui se muestra un ejemplo de 3 imágenes de la torre 2730 en la cual se detectó una anomalía, las 3 imágenes son: Color real RGB, Imagen con detección por modelo de inteligencia artificial e imagen Térmica FLIR
 
 
 ####**Torre 2730**
@@ -106,14 +107,14 @@ xfun::embed_file("Reporte poste 2730.pdf")
 ![](Images/2730Termico.JPG)
 
 
-## **Análisis en tiempo real simultáneo**
+## **Análisis en Tiempo Real Simultáneo**
 
 Aquí se tiene el análisis realizado simultáneamente con ambas cámaras RGB y FLIR Térmica 
 
 <iframe width="812" height="541" src="https://www.youtube.com/embed/SHpPi8OzRqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-##**Video explicativo del proyecto **
+##**Video Explicativo del Proyecto **
 
 <iframe width="812" height="541" src="https://www.youtube.com/embed/wVHYY008qbE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
