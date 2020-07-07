@@ -81,15 +81,32 @@ datatable(rgbs)
 
 ####**Torre **
 
+**Imagen original**
+
 ![](Images/DJI_0011.JPG)
+
+
+**Imagen detectada**
 
 ![](Images/DJI_0011_error.JPG)
 
+**Imagen Térmica**
+
+![](Images/DJI_0011_flir.JPG)
+
 ####**Torre **
+
+**Imagen original**
 
 ![](Images/DJI_0035.JPG)
 
+**Imagen detectada**
+
 ![](Images/DJI_0035_error.JPG)
+
+**Imagen Térmica**
+
+![](Images/DJI_0035_flir.JPG)
 
 ## **Análisis en tiempo real simultáneo**
 
