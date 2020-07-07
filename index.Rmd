@@ -51,6 +51,7 @@ COT04010_Puntos <-st_read("Mapas/COT04010 Puntos.shp")
 COT04010 <-st_read("Mapas/COT04010.shp")
 LST_OVI_73510_COT_puntos <- st_read("Mapas/LST-OVI-73510-COT-puntos(1).shp")
 LST_OVI_73510_COT <- st_read("Mapas/LST-OVI-73510-COT.shp")
+Anomalias <- st_read("Mapas/anomalias.shp")
 
 
 ```
@@ -66,16 +67,20 @@ mapview::mapview(list(COT04010_Puntos,COT04010,LST_OVI_73510_COT_puntos,LST_OVI_
 Aquí se muestran las ubicaciones geográficas extraídas de los metadatos de las imágenes de dónde fueron capturadas con ambas cámaras con el drone, en Violeta las imágenes tomadas con la Cámara de color real (RGB) y en Rojo las tomadas con la cámara Termica (FLIR).
 
 ```{r mapa2, echo=FALSE}
-img<- rgbs$RelPath
 mapview::mapview(rgbs,labels=F, map.types = "Esri.WorldImagery")+mapview::mapview(flirs,labels=F, map.types = "Esri.WorldImagery", col.regions = "red")
 ```
 
 ####**3)Mapa de Imágenes con Anomalías**
 
 
-```{r, datosEstados, echo=FALSE}
 
-datatable(rgbs)
+```{r mapa3, echo=FALSE}
+mapview::mapview(Anomalias,labels=F, map.types = "Esri.WorldImagery")
+```
+
+```{r tabla, echo=FALSE}
+
+datatable(Anomalias)
 ```
 
 
