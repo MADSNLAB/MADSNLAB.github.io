@@ -70,7 +70,9 @@ mapview::mapview(list(COT04010_Puntos,COT04010,LST_OVI_73510_COT_puntos,LST_OVI_
 Aquí se muestran las ubicaciones geográficas extraídas de los metadatos de las imágenes de dónde fueron capturadas con ambas cámaras con el drone, en Violeta las imágenes tomadas con la Cámara de color real (RGB) y en Rojo las tomadas con la cámara Termica (FLIR). Dar click a los círculos en los mapas para ver detalles
 
 ```{r mapa2, echo=FALSE}
-mapview::mapview(rgbs,labels=F, map.types = "Esri.WorldImagery")+mapview::mapview(flirs,labels=F, map.types = "Esri.WorldImagery", col.regions = "green")
+mapview::mapview(rgbs,labels=F, map.types = "Esri.WorldImagery", col.regions="white")+
+mapview::mapview(flirs,labels=F, map.types = "Esri.WorldImagery", col.regions = "green")+
+mapview::mapview(list(COT04010,LST_OVI_73510_COT),labels=F, map.types = "Esri.WorldImagery")
 ```
 
 
@@ -81,7 +83,8 @@ Mapa de estructuras de electricidad en los cuales se detectaron anomalías usand
 
 
 ```{r mapa3, echo=FALSE}
-mapview::mapview(Anomalias,labels=F, map.types = "Esri.WorldImagery", col.regions = "red")
+mapview::mapview(Anomalias,labels=F, map.types = "Esri.WorldImagery", col.regions = "red")+
+mapview::mapview(list(COT04010,LST_OVI_73510_COT),labels=F, map.types = "Esri.WorldImagery")
 ```
 
 En esta tabla se muestra la liga a seguir de la imagen color real en: FOTO.RGB y de la misma imagen pero detectada con inteligencia artifical en "DETECCION"
