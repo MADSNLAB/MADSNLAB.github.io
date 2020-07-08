@@ -1,5 +1,5 @@
 ---
-title: "Reporte"
+title: "Reporte de Análisis de Estructuras de Red Eléctrica"
 output:
   prettydoc::html_pretty:
     theme: cayman
@@ -30,17 +30,17 @@ library(xfun)
 
 
 
-##**Introducción**
+##**1) Introducción**
 
-Este es un reporte de inspección de la red de distribución de energía eléctrica de CFE en el Sur de Sonora realizado por Vehículo aéreo no tripulado equipado con Cámara RGB y Cámara térmica FLIR.
+Este es un reporte de inspección de la red de distribución de energía eléctrica de CFE en el Sur de Sonora realizado por Vehículo aéreo no tripulado equipado con Cámara RGB y Cámara térmica FLIR. Las imágenes RGB se analizan con inteligencia artificial para detección de posibles anomalías en las estructuras y también se analizan con segmentación para encontrar posibles problemas con vegetación. Las imágenes térmicas se analizan con filtros gaussianos para detectar posibles puntos calientes.
 
-##**Mapas**
+##**2) Mapas**
 
-###**1) Red inspeccionada**
+###**2.1) Red inspeccionada**
 
 Se inspeccionaron las redes COT04010 y LST OVI 73510 COT Administradas por CFE que se encuentran en el área cercana a la presa el Oviachic.
 
-En este mapa se pueden ver ambas polilíneas de redes, también los puntos de los postes y torres. Dar click a los círculos en los mapas para ver detalles
+En este mapa se pueden ver ambas polilíneas de redes, también los puntos de las estructuras. Dar click a los círculos en los mapas para ver detalles
 
 
 ```{r, include=FALSE, leerCapas, echo=FALSE}
@@ -59,25 +59,25 @@ Anomalias <- st_read("Mapas/anomalias.shp")
 
 ```{r mapa1, echo=FALSE}
 
-mapview::mapview(list(COT04010_Puntos,COT04010,LST_OVI_73510_COT_puntos,LST_OVI_73510_COT),labels=F, map.types = "Esri.WorldImagery", col.regions=list("red","blue","darkseagreen1","gray48"))
+mapview::mapview(list(COT04010_Puntos,COT04010,LST_OVI_73510_COT_puntos,LST_OVI_73510_COT),labels=F, map.types = "Esri.WorldImagery", col.regions=c("green","blue"))
 ```
 
 
 
 
-###**2) Imágenes tomadas con Drone**
+###**2.2) Imágenes tomadas con Drone**
 
 Aquí se muestran las ubicaciones geográficas extraídas de los metadatos de las imágenes de dónde fueron capturadas con ambas cámaras con el drone, en Violeta las imágenes tomadas con la Cámara de color real (RGB) y en Rojo las tomadas con la cámara Termica (FLIR). Dar click a los círculos en los mapas para ver detalles
 
 ```{r mapa2, echo=FALSE}
-mapview::mapview(rgbs,labels=F, map.types = "Esri.WorldImagery")+mapview::mapview(flirs,labels=F, map.types = "Esri.WorldImagery", col.regions = "red")
+mapview::mapview(rgbs,labels=F, map.types = "Esri.WorldImagery")+mapview::mapview(flirs,labels=F, map.types = "Esri.WorldImagery", col.regions = "green")
 ```
 
 
 
-####**3)Mapa de Imágenes con Anomalías**
+####**2.3) Mapa de Imágenes con Anomalías**
 
-Mapa de postes de electricidad en los cuales se detectaron anomalías usando inteligencia artificial, dar click a los círculos en los mapas para ver detalles.
+Mapa de estructuras de electricidad en los cuales se detectaron anomalías usando inteligencia artificial, dar click a los círculos en los mapas para ver detalles.
 
 
 ```{r mapa3, echo=FALSE}
@@ -92,19 +92,19 @@ datatable(Anomalias)
 ```
 
 
-##**Descarga de Reportes**
+##**3) Descarga de Reportes**
 
 ```{r reporte, echo= FALSE}
-xfun::embed_file("Reporte poste 2730.pdf")
+xfun::embed_file("Reporte estructura 2730.pdf")
 ```
 
 
 
-###**Ejemplo de Anomalías Encontradas**
-Aqui se muestra un ejemplo de 3 imágenes de la torre 2730 en la cual se detectó una anomalía, las 3 imágenes son: Color real RGB, Imagen con detección por modelo de inteligencia artificial e imagen Térmica FLIR
+###**3.1) Ejemplo de Anomalías Encontradas**
+Aqui se muestra un ejemplo de 3 imágenes de la estructura 2730 en la cual se detectó una anomalía, las 3 imágenes son: Color real RGB, Imagen con detección por modelo de inteligencia artificial e imagen Térmica FLIR
 
 
-####**Torre 2730**
+####**3.2) Torre 2730**
 
 **Imagen original**
 
@@ -120,14 +120,14 @@ Aqui se muestra un ejemplo de 3 imágenes de la torre 2730 en la cual se detect�
 ![](Images/2730Termico.JPG)
 
 
-## **Análisis en Tiempo Real Simultáneo**
+##**4) Análisis en Tiempo Real Simultáneo**
 
 Aquí se tiene el análisis realizado simultáneamente con ambas cámaras RGB y FLIR Térmica 
 
 <iframe width="812" height="541" src="https://www.youtube.com/embed/SHpPi8OzRqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-##**Video Explicativo del Proyecto **
+##**5) Video Explicativo del Proyecto **
 
 <iframe width="812" height="541" src="https://www.youtube.com/embed/wVHYY008qbE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

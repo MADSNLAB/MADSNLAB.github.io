@@ -5,12 +5,3 @@ navbar:
   left:
     - text: "Inicio"
       href: index.html
-      
-      
-
-output:
-  html_document:
-    includes:
-      in_header: logo.html
-    theme: cosmo
-    highlight: textmate
