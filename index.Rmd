@@ -94,12 +94,15 @@ En esta tabla se muestra la liga a seguir de la imagen color real en: FOTO.RGB y
 
 Name = Anomalias$Name
 Descriptio = Anomalias$descriptio
-FOTO.RGB = paste0("<a href='",Anomalias$FOTO.RGB,"'>",Anomalias$FOTO.RGB,"</a>")
-FOTO.ID = Anomalias$FOTO.ID
-Deteccion = paste0("<a href='",Anomalias$DETECCION,"'>",Anomalias$DETECCION,"</a>")
+X = Anomalias$X
+Y = Anomalias$Y
+ImagenRGB = paste0("<a href='",Anomalias$ImagenRGB,"'>",Anomalias$ImagenRGB,"</a>")
+Deteccion = paste0("<a href='",Anomalias$Deteccion,"'>",Anomalias$Deteccion,"</a>")
+Termica = paste0("<a href='",Anomalias$Termica,"'>",Anomalias$Termica,"</a>")
+Reporte = paste0("<a href='",Anomalias$Reporte,"'>",Anomalias$Reporte,"</a>")
 Geometry =paste0(Anomalias$geometry)
 
-anomalias_dt = data.frame(Name, Descriptio, FOTO.RGB, FOTO.ID, Deteccion, Geometry)
+anomalias_dt = data.frame(Name, Descriptio, X, Y, ImagenRGB, Deteccion, Termica, Reporte, Geometry)
 
 datatable(anomalias_dt, escape=FALSE)
 
