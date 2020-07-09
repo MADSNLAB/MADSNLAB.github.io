@@ -91,7 +91,20 @@ En esta tabla se muestra la liga a seguir de la imagen color real en: FOTO.RGB y
 
 ```{r tabla, echo=FALSE}
 
-datatable(Anomalias)
+
+Name = Anomalias$Name
+Descriptio = Anomalias$descriptio
+FOTO.RGB = paste0("<a href='",Anomalias$FOTO.RGB,"'>",Anomalias$FOTO.RGB,"</a>")
+FOTO.ID = Anomalias$FOTO.ID
+Deteccion = paste0("<a href='",Anomalias$DETECCION,"'>",Anomalias$DETECCION,"</a>")
+Geometry =paste0(Anomalias$geometry)
+
+anomalias_dt = data.frame(Name, Descriptio, FOTO.RGB, FOTO.ID, Deteccion, Geometry)
+
+datatable(anomalias_dt, escape=FALSE)
+
+
+
 ```
 
 
@@ -107,7 +120,7 @@ xfun::embed_file("Reporte estructura 2730.pdf")
 Aqui se muestra un ejemplo de 3 imágenes de la estructura 2730 en la cual se detectó una anomalía, las 3 imágenes son: Color real RGB, Imagen con detección por modelo de inteligencia artificial e imagen Térmica FLIR
 
 
-####**3.2) Torre 2730**
+####**3.2) Estructura 2730**
 
 **Imagen original**
 
