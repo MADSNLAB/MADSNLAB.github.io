@@ -87,22 +87,20 @@ mapview::mapview(Anomalias,labels=F, map.types = "Esri.WorldImagery", col.region
 mapview::mapview(list(COT04010,LST_OVI_73510_COT),labels=F, map.types = "Esri.WorldImagery")
 ```
 
-En esta tabla se muestra la liga a seguir de la imagen color real en: FOTO.RGB y de la misma imagen pero detectada con inteligencia artifical en "DETECCION"
+En esta tabla se muestra la liga a seguir de la imagen color real, La imagen detectada por el modelo de inteligencia artificial, la imagen térmica y los reportes individuales.
 
 ```{r tabla, echo=FALSE}
 
 
 Name = Anomalias$Name
 Descriptio = Anomalias$descriptio
-X = Anomalias$X
-Y = Anomalias$Y
 ImagenRGB = paste0("<a href='",Anomalias$ImagenRGB,"'>",Anomalias$ImagenRGB,"</a>")
 Deteccion = paste0("<a href='",Anomalias$Deteccion,"'>",Anomalias$Deteccion,"</a>")
 Termica = paste0("<a href='",Anomalias$Termica,"'>",Anomalias$Termica,"</a>")
 Reporte = paste0("<a href='",Anomalias$Reporte,"'>",Anomalias$Reporte,"</a>")
-Geometry =paste0(Anomalias$geometry)
 
-anomalias_dt = data.frame(Name, Descriptio, X, Y, ImagenRGB, Deteccion, Termica, Reporte, Geometry)
+
+anomalias_dt = data.frame(Name, Descriptio, ImagenRGB, Deteccion, Termica, Reporte)
 
 datatable(anomalias_dt, escape=FALSE)
 
@@ -114,7 +112,11 @@ datatable(anomalias_dt, escape=FALSE)
 ##**3) Descarga de Reportes**
 
 ```{r reporte, echo= FALSE}
-xfun::embed_file("Reporte estructura 2730.pdf")
+xfun::embed_file("COT04010.pdf")
+```
+
+```{r otroReporte, echo=FALSE}
+xfun::embed_file("LST-OVI-73510.pdf")
 ```
 
 
