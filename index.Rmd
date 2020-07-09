@@ -91,6 +91,8 @@ En esta tabla se muestra la liga a seguir de la imagen color real, La imagen det
 
 ```{r tabla, echo=FALSE}
 
+library(knitr)
+library(kableExtra)
 
 Name = Anomalias$Name
 Descriptio = Anomalias$descriptio
@@ -102,7 +104,9 @@ Reporte = paste0("<a href='",Anomalias$Reporte,"'>",Anomalias$Reporte,"</a>")
 
 anomalias_dt = data.frame(Name, Descriptio, ImagenRGB, Deteccion, Termica, Reporte)
 
-datatable(anomalias_dt, escape=FALSE)
+knitr::kable(anomalias_dt, escape=FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+
 
 
 
@@ -111,9 +115,13 @@ datatable(anomalias_dt, escape=FALSE)
 
 ##**3) Descarga de Reportes**
 
+#### **COT04010**
+
 ```{r reporte, echo= FALSE}
 xfun::embed_file("COT04010.pdf")
 ```
+
+#### **LST-OVI-73510**
 
 ```{r otroReporte, echo=FALSE}
 xfun::embed_file("LST-OVI-73510.pdf")
