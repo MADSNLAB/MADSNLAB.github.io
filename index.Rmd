@@ -2,8 +2,8 @@
 title: "Reporte de Análisis de Estructuras de Red Eléctrica"
 output:
   prettydoc::html_pretty:
-    theme: cayman
-    highlight: vignette
+    theme: Architect
+    highlight: github
     toc: true
     toc_depth: 5
     includes:
@@ -32,15 +32,15 @@ library(xfun)
 
 
 
-##**1) Introducción**
+## **1) Introducción**
 
-Este es un reporte de inspección de la red de distribución de energía eléctrica de CFE y Grupo México en el Sur de Sonora realizado por Vehículo aéreo no tripulado equipado con Cámara RGB y Cámara térmica FLIR. Las imágenes RGB se analizan con inteligencia artificial para detección de posibles anomalías en las estructuras y también se analizan con segmentación para encontrar posibles problemas con vegetación. Las imágenes térmicas se analizan con filtros gaussianos para detectar posibles puntos calientes.
+Este es un reporte de inspección de la red de distribución de energía eléctrica de CFE y Grupo México en el Sur de Sonora realizado por Vehículo aéreo no tripulado equipado con Cámara RGB y Cámara térmica FLIR. Las imágenes RGB se analizan con inteligencia artificial y segmentacipara detección de posibles anomalías en las estructuras y también se analizan con segmentación para encontrar posibles problemas con vegetación. Las imágenes térmicas se analizan con filtros gaussianos para detectar posibles puntos calientes.
 
 CAMBIO
 
-##**2) Mapas**
+## **2) Mapas**
 
-###**2.1) Red inspeccionada**
+### **2.1) Red inspeccionada**
 
 Se inspeccionaron las redes COT04010 y LST OVI 73510 COT Administradas por CFE que se encuentran en el área cercana a la presa el Oviachic.
 
@@ -69,7 +69,7 @@ mapview::mapview(list(COT04010_Puntos,COT04010,LST_OVI_73510_COT_puntos,LST_OVI_
 
 
 
-###**2.2) Imágenes tomadas con Drone**
+### **2.2) Imágenes tomadas con Drone**
 
 Aquí se muestran las ubicaciones geográficas extraídas de los metadatos de las imágenes de dónde fueron capturadas con ambas cámaras con el drone, en Violeta las imágenes tomadas con la Cámara de color real (RGB) y en Rojo las tomadas con la cámara Termica (FLIR). Dar click a los círculos en los mapas para ver detalles
 
@@ -81,7 +81,7 @@ mapview::mapview(list(COT04010,LST_OVI_73510_COT),labels=F, map.types = "Esri.Wo
 
 
 
-####**2.3) Mapa de Imágenes con Anomalías**
+#### **2.3) Mapa de Imágenes con Anomalías**
 
 Mapa de estructuras de electricidad en los cuales se detectaron anomalías usando inteligencia artificial, dar click a los círculos en los mapas para ver detalles.
 
@@ -115,7 +115,7 @@ knitr::kable(anomalias_dt, escape=FALSE) %>%
 ```
 
 
-##**3) Descarga de Reportes**
+## **3) Descarga de Reportes**
 
 #### **COT04010**
 
@@ -131,34 +131,45 @@ xfun::embed_file("LST-OVI-73510.pdf")
 
 
 
-###**3.1) Ejemplo de Anomalías Encontradas**
+### **3.1) Ejemplo de Anomalías Encontradas**
 Aquí se muestra un ejemplo de 3 imágenes de la estructura 2730 en la cual se detectó una anomalía, las 3 imágenes son: Color real RGB, Imagen con detección por modelo de inteligencia artificial e imagen Térmica FLIR
 
 
-####**3.2) Estructura 2730**
+#### **3.2) Estructura 2730**
 
 **Imagen original**
+Imagen RGB Color real tomada por la cámara del drone.
 
 ![](Images/DJI_0055.JPG)
 
+**Imagen segmentada**
+
+Imagen analizada con inteligencia artificial para segmentar los componentes que pertenecen a la estructura y e ignorar los que no (por eso es que se ilustra el fondo en blanco y negro)
+
+![](Images/DJI_0055.png)
+
 
 **Imagen detectada**
+
+Resultado de la detección por clasificación supervisada de anomalías en la estructura.
 
 ![](Images/DJI_0055 (1).jpg)
 
 **Imagen Térmica**
 
+Imagen Térmica FLIR analizada para puntos fríos y calientes.
+
 ![](Images/2730Termico.JPG)
 
 
-##**4) Análisis en Tiempo Real Simultáneo**
+## **4) Análisis en Tiempo Real Simultáneo**
 
 Aquí se tiene el análisis realizado simultáneamente con ambas cámaras RGB y FLIR Térmica 
 
 <iframe width="812" height="541" src="https://www.youtube.com/embed/SHpPi8OzRqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-##**5) Video Explicativo del Proyecto **
+## **5) Video Explicativo del Proyecto **
 
 <iframe width="812" height="541" src="https://www.youtube.com/embed/wVHYY008qbE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
