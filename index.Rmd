@@ -104,9 +104,9 @@ ImagenRGB = paste0("<a href='",Anomalias$ImagenRGB,"'>",Anomalias$ImagenRGB,"</a
 Deteccion = paste0("<a href='",Anomalias$Deteccion,"'>",Anomalias$Deteccion,"</a>")
 Termica = paste0("<a href='",Anomalias$Termica,"'>",Anomalias$Termica,"</a>")
 Reporte = paste0("<a href='",Anomalias$Reporte,"'>",Anomalias$Reporte,"</a>")
+Segmentaci = paste0("<a href='",Anomalias$Segmentaci,"'>",Anomalias$Segmentaci,"</a>")
 
-
-anomalias_dt = data.frame(Name, Descriptio, ImagenRGB, Deteccion, Termica, Reporte)
+anomalias_dt = data.frame(Name, Descriptio, ImagenRGB,Segmentaci, Deteccion, Termica, Reporte)
 
 knitr::kable(anomalias_dt, escape=FALSE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
