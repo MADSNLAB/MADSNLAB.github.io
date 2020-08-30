@@ -2,7 +2,7 @@
 title: "Reporte de Análisis de Estructuras de Red Eléctrica"
 output:
   prettydoc::html_pretty:
-    theme: Architect
+    theme: architect
     highlight: github
     toc: true
     toc_depth: 5
@@ -11,6 +11,16 @@ output:
 editor_options: 
   chunk_output_type: console
 ---
+---
+title: Reporte de Análisis de Estructuras de Red Eléctrica
+output:
+  prettydoc::html_pretty:
+    theme: Architect
+    highlight: github
+---
+
+
+
 
 ```{r, librerias,include=FALSE, echo=FALSE}
 library(pacman)
@@ -34,7 +44,7 @@ library(xfun)
 
 ## **1) Introducción**
 
-Este es un reporte de inspección de la red de distribución de energía eléctrica de CFE y Grupo México en el Sur de Sonora realizado por Vehículo aéreo no tripulado equipado con Cámara RGB y Cámara térmica FLIR. Las imágenes RGB se analizan con inteligencia artificial y segmentacipara detección de posibles anomalías en las estructuras y también se analizan con segmentación para encontrar posibles problemas con vegetación. Las imágenes térmicas se analizan con filtros gaussianos para detectar posibles puntos calientes.
+Este es un reporte de inspección de la red de distribución de energía eléctrica de CFE en el Sur de Sonora realizado por Vehículo aéreo no tripulado equipado con Cámara RGB y Cámara térmica FLIR. Las imágenes RGB se analizan con inteligencia artificial y segmentacipara detección de posibles anomalías en las estructuras y también se analizan con segmentación para encontrar posibles problemas con vegetación. Las imágenes térmicas se analizan con filtros gaussianos para detectar posibles puntos calientes.
 
 CAMBIO
 
@@ -91,7 +101,7 @@ mapview::mapview(Anomalias,labels=F, map.types = "Esri.WorldImagery", col.region
 mapview::mapview(list(COT04010,LST_OVI_73510_COT),labels=F, map.types = "Esri.WorldImagery")
 ```
 
-En esta tabla se muestra la liga a seguir de la imagen color real, La imagen detectada por el modelo de inteligencia artificial, la imagen térmica y los reportes individuales.
+En esta tabla se muestra la liga a seguir de la imagen color real, La imagen segmentada, La imagen detectada por el modelo de inteligencia artificial, la imagen térmica y los reportes individuales.
 
 ```{r tabla, echo=FALSE}
 
