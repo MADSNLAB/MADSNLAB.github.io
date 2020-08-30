@@ -11,16 +11,6 @@ output:
 editor_options: 
   chunk_output_type: console
 ---
----
-title: Reporte de Análisis de Estructuras de Red Eléctrica
-output:
-  prettydoc::html_pretty:
-    theme: Architect
-    highlight: github
----
-
-
-
 
 ```{r, librerias,include=FALSE, echo=FALSE}
 library(pacman)
