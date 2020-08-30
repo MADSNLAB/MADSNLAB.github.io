@@ -159,7 +159,7 @@ Resultado de la detección por clasificación supervisada de anomalías en la es
 
 Imagen Térmica FLIR analizada para puntos fríos y calientes.
 
-![](Images/2730Termico.JPG)
+![](Images/2730Termico.jpg)
 
 
 ## **4) Análisis en Tiempo Real Simultáneo**
